@@ -39,6 +39,25 @@
         }
       }
     </script>
+    <style>
+      .reveal-animation {
+  animation-name: reveal;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+    </style>
   </head>
   <body>
     <div class="page">
@@ -243,24 +262,24 @@
           <div class="cases__center center">
             <div class="cases__stage stage" data-aos="animation-scale-y">Portfolio</div>
             <h2 class="cases__title h1" data-aos="animation-scale-y" data-aos-delay="150">Look at My <br>Products.</h2>
-            <div class="cases__nav" data-aos="animation-scale-y" data-aos-delay="300"> <a class="cases__link active" onclick="showDiv('ai_projects','frontend_and_design')">AI Projects</a>
-              <a class="cases__link" onclick="showDiv('frontend_and_design','ai_projects')">Frontend & Design</a></div>
+            <div class="cases__nav" data-aos="animation-scale-y" data-aos-delay="300"> <a id="ai" class="cases__link active" onclick="showDiv('ai_projects','frontend_and_design')">AI Projects</a>
+              <a id="frontend" class="cases__link" onclick="showDiv('frontend_and_design','ai_projects')">Frontend & Design</a></div>
             <div id="ai_projects" class="cases__list js-owl" data-items-mobile-portrait="1" data-items-mobile-album="1" data-autoheight><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="" href="case.html">
-                              <div class="cases__preview"><img class="cases__pic" src="https://cdn.dribbble.com/users/1761051/screenshots/7151325/bye_bye_money.gif" alt="">
+                              <div class="cases__preview"><img class="cases__pic" src="./images/eduwise.gif" alt="">
                                 <div class="cases__box">View <br>Project</div>
                               </div>
                               <div class="cases__body">
                                 <h4 class="cases__info h4">Eduwise</h4>
                                 <div class="cases__text">Expense Management System for Schools | AI Powered</div>
                               </div></a><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="200" href="case.html">
-                              <div class="cases__preview"><img class="cases__pic" src="https://cdn.dribbble.com/users/2424410/screenshots/15164674/dribbble.gif" alt="">
+                              <div class="cases__preview"><img class="cases__pic" src="./images/foodyea.gif" alt="">
                                 <div class="cases__box">View <br>Project</div>
                               </div>
                               <div class="cases__body">
                                 <h4 class="cases__info h4">Foodyea</h4>
                                 <div class="cases__text">Food Recipe Recommendation System</div>
                               </div></a><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="" href="case.html">
-                              <div class="cases__preview"><img class="cases__pic" src="https://madewithnetworkfra.fra1.digitaloceanspaces.com/spatie-space-production/1353/tic_tac_toe.gif" alt="">
+                              <div class="cases__preview"><img class="cases__pic" src="./images/tictac.gif" alt="">
                                 <div class="cases__box">View <br>Project</div>
                               </div>
                               <div class="cases__body">
@@ -278,7 +297,7 @@
 
             <!-- card for frontend and design -->
             <div style="display: none;" id="frontend_and_design" class="cases__list js-owl" data-items-mobile-portrait="1" data-items-mobile-album="1" data-autoheight><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="" href="case.html">
-                              <div class="cases__preview"><img class="cases__pic" src="https://cdn.dribbble.com/users/1761051/screenshots/7151325/bye_bye_money.gif" alt="">
+                              <div class="cases__preview"><img class="cases__pic" src="./images/socimiya.gif" alt="">
                                 <div class="cases__box">View <br>Project</div>
                               </div>
                               <div class="cases__body">
@@ -321,7 +340,7 @@
             <div class="review__container" data-aos="animation-translate-y" data-aos-delay="400">
               <div class="review__slider owl-carousel js-slider-review">
                 <div class="review__item">
-                  <div class="review__text">&ldquo; Folio Designer is a clean and creative landing page that matches with any freelancer or designer, you can easily to build the page in Sketch or Figma.&rdquo;</div>
+                  <div class="review__text">&ldquo; Dilip Pokhrel is the one who implements machine learning algorithms to improve the business and helps to reach the targeted business goals&rdquo;</div>
                   <div class="review__author">
                     <div class="review__ava"><img class="review__pic" src="images/content-ava-1.jpg" alt=""></div>
                     <div class="review__details">
@@ -331,7 +350,7 @@
                   </div>
                 </div>
                 <div class="review__item">
-                  <div class="review__text">&ldquo; Folio Designer is a clean and creative landing page that matches with any freelancer or designer, you can easily to build the page in Sketch or Figma.&rdquo;</div>
+                  <div class="review__text">&ldquo; Dilip Pokhrel is the one who implements machine learning algorithms to improve the business and helps to reach the targeted business goals&rdquo;</div>
                   <div class="review__author">
                     <div class="review__ava"><img class="review__pic" src="images/content-ava-1.jpg" alt=""></div>
                     <div class="review__details">
@@ -341,7 +360,7 @@
                   </div>
                 </div>
                 <div class="review__item">
-                  <div class="review__text">&ldquo; Folio Designer is a clean and creative landing page that matches with any freelancer or designer, you can easily to build the page in Sketch or Figma.&rdquo;</div>
+                  <div class="review__text">&ldquo; Dilip Pokhrel is the one who implements machine learning algorithms to improve the business and helps to reach the targeted business goals&rdquo;</div>
                   <div class="review__author">
                     <div class="review__ava"><img class="review__pic" src="images/content-ava-1.jpg" alt=""></div>
                     <div class="review__details">
@@ -351,7 +370,7 @@
                   </div>
                 </div>
                 <div class="review__item">
-                  <div class="review__text">&ldquo; Folio Designer is a clean and creative landing page that matches with any freelancer or designer, you can easily to build the page in Sketch or Figma.&rdquo;</div>
+                  <div class="review__text">&ldquo; Dilip Pokhrel is the one who implements machine learning algorithms to improve the business and helps to reach the targeted business goals&rdquo;</div>
                   <div class="review__author">
                     <div class="review__ava"><img class="review__pic" src="images/content-ava-1.jpg" alt=""></div>
                     <div class="review__details">
@@ -509,8 +528,14 @@
     </div>
     <script>
       function showDiv(a,b) {
-        document.getElementById(a).style.display="flex"
-        document.getElementById(b).style.display="none"
+        var divToShow = document.getElementById(a);
+  var divToHide = document.getElementById(b);
+
+  divToShow.style.display = "flex";
+  divToHide.style.display = "none";
+  document.getElementById(b.split("_")[0]).classList.remove("active")
+        document.getElementById(a.split("_")[0]).classList.add("active")
+  divToShow.classList.add("reveal-animation");
 
       }
   </script>
