@@ -148,11 +148,21 @@
                 </div>
               </div>
               <div class="details__item">
-                <div class="details__preview details__preview_color" data-aos="animation-scale" data-aos-delay="300">
-                  <div class="details__img"><img class="details__pic" src="images/content-color-picker.png" alt=""></div>
+                <div class="details__preview" data-aos="animation-scale" data-aos-delay="300">
+                  <div class="details__img"><img class="details__pic" src="https://cdn3d.iconscout.com/3d/premium/thumb/tick-button-8126897-6507161.png" alt=""></div>
                 </div>
                 <h5 class="details__category h5" data-aos="animation-scale-y" data-aos-delay="300">Test</h5>
                 <div class="details__text" data-aos="animation-scale-y" data-aos-delay="300">Thorough testing validates the trained model's accuracy, robustness providing insights for further improvements.</div>
+                <div class="details__btn" data-aos="animation-scale-y" data-aos-delay="300">
+                  <button class="btn btn_dark">Find out more </button>
+                </div>
+              </div>
+              <div class="details__item">
+                <div class="details__preview details__preview_color" data-aos="animation-scale" data-aos-delay="300">
+                  <div class="details__img"><img class="details__pic" src="images/content-color-picker.png" alt=""></div>
+                </div>
+                <h5 class="details__category h5" data-aos="animation-scale-y" data-aos-delay="300">Deploy</h5>
+                <div class="details__text" data-aos="animation-scale-y" data-aos-delay="300">Deployment of models ensures real-world implementation of AI for businesses.</div>
                 <div class="details__btn" data-aos="animation-scale-y" data-aos-delay="300">
                   <button class="btn btn_dark">Find out more </button>
                 </div>
@@ -178,11 +188,21 @@
                 </div>
               </div>
               <div class="details__item">
-                <div class="details__preview details__preview_color" data-aos="animation-scale" data-aos-delay="300">
-                  <div class="details__img"><img class="details__pic" src="images/content-color-picker.png" alt=""></div>
+                <div class="details__preview" data-aos="animation-scale" data-aos-delay="300">
+                  <div class="details__img"><img class="details__pic" src="https://cdn3d.iconscout.com/3d/premium/thumb/tick-button-8126897-6507161.png" alt=""></div>
                 </div>
                 <h5 class="details__category h5" data-aos="animation-scale-y" data-aos-delay="300">Test</h5>
                 <div class="details__text" data-aos="animation-scale-y" data-aos-delay="300">Thorough testing validates the trained model's accuracy, robustness providing insights for further improvements.</div>
+                <div class="details__btn" data-aos="animation-scale-y" data-aos-delay="300">
+                  <button class="btn btn_dark">Find out more </button>
+                </div>
+              </div>
+              <div class="details__item">
+                <div class="details__preview details__preview_color" data-aos="animation-scale" data-aos-delay="300">
+                  <div class="details__img"><img class="details__pic" src="images/content-color-picker.png" alt=""></div>
+                </div>
+                <h5 class="details__category h5" data-aos="animation-scale-y" data-aos-delay="300">Deploy</h5>
+                <div class="details__text" data-aos="animation-scale-y" data-aos-delay="300">Deployment of models ensures real-world implementation of AI for businesses.</div>
                 <div class="details__btn" data-aos="animation-scale-y" data-aos-delay="300">
                   <button class="btn btn_dark">Find out more </button>
                 </div>
@@ -202,7 +222,7 @@
           <div class="work__wrap">
             <div class="work__stage stage stage_pink" data-aos="animation-scale-y">Who I Work With</div>
             <h2 class="work__title title h1" data-aos="animation-scale-y" data-aos-delay="150">Partnering with diverse teams.</h2>
-            <div class="work__text" data-aos="animation-scale-y" data-aos-delay="300"> Leveraging machine learning expertise to innovate and create intelligent solutions alongside data scientists and engineers.</div><a class="scroll js-scroll" data-aos="animation-scale-y" href="#cases">
+            <div class="work__text" data-aos="animation-scale-y" data-aos-delay="300"> Leveraging machine learning expertise to innovate and create intelligent solutions alongside data scientists and analysts.</div><a class="scroll js-scroll" data-aos="animation-scale-y" href="#cases">
               <div class="scroll__icon"><img style="width:30px;height:auto" class="scroll__pic" src="https://icon-library.com/images/scroll-down-icon-png/scroll-down-icon-png-22.jpg" alt=""></div>
               <div class="scroll__text">Scroll down</div></a>
           </div>
@@ -223,51 +243,71 @@
           <div class="cases__center center">
             <div class="cases__stage stage" data-aos="animation-scale-y">Portfolio</div>
             <h2 class="cases__title h1" data-aos="animation-scale-y" data-aos-delay="150">Look at My <br>Products.</h2>
-            <div class="cases__nav" data-aos="animation-scale-y" data-aos-delay="300"><a class="cases__link active" href="#">Website</a><a class="cases__link" href="#">Illustration</a><a class="cases__link" href="#">Mobile</a></div>
-            <div class="cases__list js-owl" data-items-mobile-portrait="1" data-items-mobile-album="1" data-autoheight><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="" href="case.html">
-                              <div class="cases__preview"><img class="cases__pic" src="https://elements-cover-images-0.imgix.net/bcda21db-cbe2-4e99-a6ea-7ba7e90d8caa?auto=compress%2Cformat&fit=max&w=1019&s=93a1d10e0f5e0492a31bcd180695be80" alt="">
+            <div class="cases__nav" data-aos="animation-scale-y" data-aos-delay="300"> <a class="cases__link active" onclick="showDiv('ai_projects','frontend_and_design')">AI Projects</a>
+              <a class="cases__link" onclick="showDiv('frontend_and_design','ai_projects')">Frontend & Design</a></div>
+            <div id="ai_projects" class="cases__list js-owl" data-items-mobile-portrait="1" data-items-mobile-album="1" data-autoheight><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="" href="case.html">
+                              <div class="cases__preview"><img class="cases__pic" src="https://cdn.dribbble.com/users/1761051/screenshots/7151325/bye_bye_money.gif" alt="">
                                 <div class="cases__box">View <br>Project</div>
                               </div>
                               <div class="cases__body">
                                 <h4 class="cases__info h4">Eduwise</h4>
-                                <div class="cases__text">Expense Management System for Shools | AI Powered</div>
+                                <div class="cases__text">Expense Management System for Schools | AI Powered</div>
                               </div></a><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="200" href="case.html">
-                              <div class="cases__preview"><img class="cases__pic" src="images/content-cases-pic-2.jpg" alt="">
+                              <div class="cases__preview"><img class="cases__pic" src="https://cdn.dribbble.com/users/2424410/screenshots/15164674/dribbble.gif" alt="">
                                 <div class="cases__box">View <br>Project</div>
                               </div>
                               <div class="cases__body">
-                                <h4 class="cases__info h4">Collab Landing Page</h4>
-                                <div class="cases__text">UI Kit, Coded Template</div>
+                                <h4 class="cases__info h4">Foodyea</h4>
+                                <div class="cases__text">Food Recipe Recommendation System</div>
                               </div></a><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="" href="case.html">
-                              <div class="cases__preview"><img class="cases__pic" src="images/content-cases-pic-3.jpg" alt="">
+                              <div class="cases__preview"><img class="cases__pic" src="https://madewithnetworkfra.fra1.digitaloceanspaces.com/spatie-space-production/1353/tic_tac_toe.gif" alt="">
                                 <div class="cases__box">View <br>Project</div>
                               </div>
                               <div class="cases__body">
-                                <h4 class="cases__info h4">Collab Landing Page</h4>
-                                <div class="cases__text">UI Kit, Coded Template</div>
-                              </div></a><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="200" href="case.html">
-                              <div class="cases__preview"><img class="cases__pic" src="images/content-cases-pic-4.jpg" alt="">
-                                <div class="cases__box">View <br>Project</div>
-                              </div>
-                              <div class="cases__body">
-                                <h4 class="cases__info h4">Collab Landing Page</h4>
-                                <div class="cases__text">UI Kit, Coded Template</div>
-                              </div></a><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="" href="case.html">
-                              <div class="cases__preview"><img class="cases__pic" src="images/content-cases-pic-5.jpg" alt="">
-                                <div class="cases__box">View <br>Project</div>
-                              </div>
-                              <div class="cases__body">
-                                <h4 class="cases__info h4">Collab Landing Page</h4>
-                                <div class="cases__text">UI Kit, Coded Template</div>
-                              </div></a><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="200" href="case.html">
-                              <div class="cases__preview"><img class="cases__pic" src="images/content-cases-pic-6.jpg" alt="">
-                                <div class="cases__box">View <br>Project</div>
-                              </div>
-                              <div class="cases__body">
-                                <h4 class="cases__info h4">Collab Landing Page</h4>
-                                <div class="cases__text">UI Kit, Coded Template</div>
+                                <h4 class="cases__info h4">Tic-Tac-Toe Game</h4>
+                                <div class="cases__text">Bot play against human. Trained on Tensorflow</div>
                               </div></a>
+                            
+                           
+                           
             </div>
+
+
+
+
+
+            <!-- card for frontend and design -->
+            <div style="display: none;" id="frontend_and_design" class="cases__list js-owl" data-items-mobile-portrait="1" data-items-mobile-album="1" data-autoheight><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="" href="case.html">
+                              <div class="cases__preview"><img class="cases__pic" src="https://cdn.dribbble.com/users/1761051/screenshots/7151325/bye_bye_money.gif" alt="">
+                                <div class="cases__box">View <br>Project</div>
+                              </div>
+                              <div class="cases__body">
+                                <h4 class="cases__info h4">Socimiya</h4>
+                                <div class="cases__text">Social Media Web Application</div>
+                              </div></a><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="200" href="case.html">
+                              <div class="cases__preview"><img class="cases__pic" src="https://cdn.dribbble.com/users/2424410/screenshots/15164674/dribbble.gif" alt="">
+                                <div class="cases__box">View <br>Project</div>
+                              </div>
+                              <div class="cases__body">
+                                <h4 class="cases__info h4">Foodyea</h4>
+                                <div class="cases__text">Food Recipe Recommendation System</div>
+                              </div></a><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="" href="case.html">
+                              <div class="cases__preview"><img class="cases__pic" src="https://madewithnetworkfra.fra1.digitaloceanspaces.com/spatie-space-production/1353/tic_tac_toe.gif" alt="">
+                                <div class="cases__box">View <br>Project</div>
+                              </div>
+                              <div class="cases__body">
+                                <h4 class="cases__info h4">Tic-Tac-Toe Game</h4>
+                                <div class="cases__text">Bot play against human. Trained on Tensorflow</div>
+                              </div></a>
+                            
+                           
+                           
+            </div>
+
+
+
+
+
           </div>
           <div class="cases__figures">
             <div class="cases__figure"><img class="cases__pic js-parallax" data-scale="2" data-orientation="down" src="images/content-figure-2.png" alt=""></div>
@@ -467,6 +507,13 @@
       </div>
       <div class="cursor"></div>
     </div>
+    <script>
+      function showDiv(a,b) {
+        document.getElementById(a).style.display="flex"
+        document.getElementById(b).style.display="none"
+
+      }
+  </script>
     <script src="js/lib-jquery.min.js"></script>
     <script src="js/lib-owl.carousel.min.js"></script>
     <script src="js/lib-aos.js"></script>
