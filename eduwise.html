@@ -1,0 +1,451 @@
+<html>
+   <head>
+      <meta name="viewport" content="width=device-width">
+      <meta charset="utf-8">
+      <meta name="next-head-count" content="4">
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" media="all" href="css/css-app.min.css">
+<script>
+  var viewportmeta = document.querySelector('meta[name="viewport"]');
+  if (viewportmeta) {
+    if (screen.width < 375) {
+      var newScale = screen.width / 375;
+      viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+    } else {
+      viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+    }
+  }
+</script>
+    <script src="./js/lazysizes.min.js" async=""></script>
+<style>
+  .reveal-animation {
+animation-name: reveal;
+animation-duration: 1s;
+animation-fill-mode: forwards;
+}
+
+@keyframes reveal {
+0% {
+opacity: 0;
+transform: scale(0.5);
+}
+100% {
+opacity: 1;
+transform: scale(1);
+}
+}
+
+#loading-container {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #ffffff;
+z-index: 9999;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.loader {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+border: 4px solid #333333;
+border-top-color: transparent;
+animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+0% {
+transform: rotate(0deg);
+}
+100% {
+transform: rotate(360deg);
+}
+}
+
+
+
+.header__burger:before{
+   background-color: black;
+}
+.header__burger:after{
+   background-color: black;
+}
+
+
+</style>
+      <style data-jss="" data-meta="MuiSvgIcon">
+         .MuiSvgIcon-root {
+         fill: currentColor;
+         width: 1em;
+         height: 1em;
+         display: inline-block;
+         font-size: 1.5rem;
+         transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+         flex-shrink: 0;
+         user-select: none;
+         }
+         .MuiSvgIcon-colorPrimary {
+         color: #3f51b5;
+         }
+         .MuiSvgIcon-colorSecondary {
+         color: #f50057;
+         }
+         .MuiSvgIcon-colorAction {
+         color: rgba(0, 0, 0, 0.54);
+         }
+         .MuiSvgIcon-colorError {
+         color: #f44336;
+         }
+         .MuiSvgIcon-colorDisabled {
+         color: rgba(0, 0, 0, 0.26);
+         }
+         .MuiSvgIcon-fontSizeInherit {
+         font-size: inherit;
+         }
+         .MuiSvgIcon-fontSizeSmall {
+         font-size: 1.25rem;
+         }
+         .MuiSvgIcon-fontSizeLarge {
+         font-size: 2.1875rem;
+         }
+      </style>
+      <style data-jss="" data-meta="MuiAvatar">
+         .MuiAvatar-root {
+         width: 40px;
+         height: 40px;
+         display: flex;
+         overflow: hidden;
+         position: relative;
+         font-size: 1.25rem;
+         align-items: center;
+         flex-shrink: 0;
+         font-family: sans-serif;
+         line-height: 1;
+         user-select: none;
+         border-radius: 50%;
+         justify-content: center;
+         }
+         .MuiAvatar-colorDefault {
+         color: #fafafa;
+         background-color: #bdbdbd;
+         }
+         .MuiAvatar-rounded {
+         border-radius: 4px;
+         }
+         .MuiAvatar-square {
+         border-radius: 0;
+         }
+         .MuiAvatar-img {
+         color: transparent;
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         text-align: center;
+         text-indent: 10000px;
+         }
+         .MuiAvatar-fallback {
+         width: 75%;
+         height: 75%;
+         }
+      </style>
+
+
+<style>
+*{
+    font-family: 'Montserrat', sans-serif !important;
+   max-width: 100vw;
+}
+video {
+    object-fit: fill; /* or other values like "contain" or "cover" */
+    border: none; /* Remove any borders */
+    padding: 0; /* Remove any padding */
+    margin: 0; /* Remove any margin */
+  }
+</style>
+   </head>
+   <body data-new-gr-c-s-check-loaded="14.1114.0" data-gr-ext-installed="">
+      <div class="header js-header" id="header">
+         <div class="header__center center"><a class="header__logo" href="/"><a class="header__logo" href="index.html"><img class="header__pic" src="https://media.licdn.com/dms/image/C5603AQFlEk9Rw_d9qg/profile-displayphoto-shrink_800_800/0/1641045529666?e=2147483647&v=beta&t=YGl5ArrjZOVlyVRpZod1Vz9etAuSthWq5inbmCPVa10" style="height:50px;width:50px;border-radius:50px" alt=""></a></a>
+           <p style="margin-left: -20px;margin-right: 70px;font-weight:600;"> Dilip <span style="color:rgb(70, 43, 226)">Pokhrel</span></p>
+           <div class="header__social header__social_main"><a class="header__link" href="https://github.com/coder-dilip" target="_blank">
+               <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" style="width:18px;height:auto;opacity: 0.6;margin-right: 15px;" alt="">
+                 Github</a><a class="header__link" href="https://www.linkedin.com/in/dilippokhrel/" target="_blank">
+                   <img src="https://icon-library.com/images/linkedin-icon-resume/linkedin-icon-resume-1.jpg" style="width:23px;height:auto;opacity: 0.6;margin-right: 15px;" alt="">
+              Linkedin</a></div>
+           <button class="header__burger js-header-burger" style="color:black !important"></button>
+         </div>
+         <div class="header__wrapper js-header-wrapper">
+           <div class="header__preview"><a class="header__logo" href="index.html">
+            <div style="display: flex;align-items: center;">
+               <img class="header__pic" style="border-radius: 60px;height:60px;width:auto" src="https://yt3.googleusercontent.com/ytc/AGIKgqPTjOGHkzx6yGVcuReM-qE14VBPfmfHMRu24Bqj=s900-c-k-c0x00ffffff-no-rj" alt=""></a>
+               <h3 style="font-weight: bolder;margin-left: 15px;color:white">Dilip Pokhrel</h3>
+            </div>
+             <div class="header__img"></div>
+           </div>
+           <div class="header__center center">
+             <div class="header__contacts"><a class="header__line" href="mailto:designsdilip@gmail.com">
+                 <div class="header__icon">
+                  
+                 </div>
+                 <div class="header__text">designsdilip@gmail.com</div></a>
+               <div class="header__line">
+                 <div class="header__icon">
+                 
+                 </div>
+                 <div class="header__text"> 
+                   <p>Kathmandu, Nepal</p>
+                 </div>
+               </div>
+             </div>
+             <nav class="header__nav"><a class="header__item" href="#"><span>About</span></a><a class="header__item" href="#"><span>Work</span></a><a class="header__item" href="#"><span>Services</span></a><a class="header__item" href="#"><span>Contact</span></a></nav>
+             <div class="header__social header__social_inner"><a class="header__link" href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewbox="0 0 16 16">
+                   <path fill-rule="evenodd" d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm2.2 7.4s-.2-.6-.3-.8c1.7-.8 2.8-1.7 3.2-2.2.7.9 1.1 2 1.2 3.2-.8-.2-2.6-.5-4.1-.2zM9.1 5.1C8.3 3.7 7.4 2.5 7 1.8c1.9-.5 3.6.1 4.9 1.3-.4.5-1.2 1.3-2.8 2zm-4-2.6c.4.5 1.2 1.7 2 3.2-2.2.5-4.2.6-5.1.6.4-1.6 1.6-3 3.1-3.8zM8 7.3c.1.2.2.4.3.5-2.8.9-4.6 3.2-5.2 4.1-.8-1.1-1.3-2.4-1.3-3.7.9-.1 3.5-.2 6.2-.9zm1 2.2c.7 2 1.1 3.6 1.2 4.4-2.1.7-4.5.3-5.8-.8.4-.7 1.7-2.5 4.6-3.6zm2.9 3.4c-.2-.8-.5-2.2-1.1-3.9 1.1-.2 2.7 0 3.3.2-.3 1.5-1.1 2.8-2.2 3.7z" fill="#111029"></path>
+                 </svg>Dribbble</a><a class="header__link" href="#">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16">
+                   <path fill="#9f9fa9" d="M12 0c2.056 0 4 1.944 4 4h0v8c0 2.056-1.944 4-4 4h0-8c-2.056 0-4-1.944-4-4h0V4c0-2.056 1.944-4 4-4h0zm0 2H4c-.935 0-2 1.065-2 2h0v8c0 .953 1.047 2 2 2h8c.935 0 2-1.065 2-2h0V4c0-.935-1.065-2-2-2h0zM8 4c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4zm0 2c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2zm4.145-3.068a.96.96 0 1 1 0 1.92.96.96 0 1 1 0-1.92z"></path>
+                 </svg>Instagram</a></div>
+           </div>
+         </div>
+       </div>
+       <br><br><br>
+      <div id="__next">
+         <div style="margin-bottom:40px"></div>
+         <div class="Home_active_details__1TKPJ" style="width:90%;margin:auto;max-width:1050px">
+            <p class="Home_hello__30AyG" style="width: 100%; font-size: 41px; line-height: 3rem; margin-top: 100px; animation: 0s ease 0s 1 normal none running none; margin-bottom: 0px;font-family: 'Montserrat', sans-serif;font-weight: bolder;">Eduwise</p>
+            <p style="color:GrayText">Travel Site</p>
+            <div style="margin-top:30px">
+               <div style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;">
+                  <div style="box-sizing: border-box; display: block; max-width: 100%;">
+                  
+                     <div class="plyr">
+                        <video controls style="border-radius: 8px;">
+                          <source src="./project_videos/expense.mp4" type="video/mp4">
+                        </video>
+                      </div>
+                </div>
+                
+               </div>
+            </div>
+            <div style="width:100%;margin:auto;margin-top:80px">
+               <h1>Project Description</h1>
+               <p style="font-size:1.2rem;margin-left:3px;margin-top:-10px;opacity:0.8;text-align: justify;">
+                  <br>
+                  Welcome to our innovative expense management system designed specifically for schools! 🎉 Our platform is the perfect solution for both the Ministry of Education and school managers or accountants. With our intuitive interface and advanced AI capabilities, schools can efficiently manage their budgets and expenses. Our system enables seamless collaboration between the government and public schools, ensuring transparency and effective financial planning. Through our automated recommendation system, schools can set their savings goals, and our AI algorithms will suggest the optimal saving amount. 💡✨
+
+                 <br><br><br>
+             our expense management system offers an array of intelligent features. 🤖 Generate comprehensive reports and professional letters effortlessly using our state-of-the-art text generation model. Say goodbye to manual document preparation! 📃 Moreover, our ARIMA model leverages predictive analytics to forecast future expenses, empowering school accountants and managers with crucial insights. By providing timely warnings about potential overspending, we help schools stay on top of their financial commitments. 💪
+                  
+                 <br><br><br>
+              our system guides schools on effective money-saving strategies. 📚 Our user-friendly interface provides step-by-step instructions, empowering school personnel to make informed financial decisions. With the ability to forecast future expenses and identify areas for cost reduction, our platform equips schools with the tools they need to maximize their resources. By streamlining financial processes and promoting prudent spending habits, we help schools create a sustainable and thriving educational environment. 💰
+                  <br><br><br>
+                  Remember, our expense management system is tailor-made for schools, ensuring efficient budget allocation, seamless reporting, and proactive financial planning. Experience the power of AI-driven expense management and transform your school's financial practices today! 🚀</p>
+            </div>
+            <div style="width:100%;margin:auto;margin-top:80px">
+               <h1> Tools and Frameworks</h1>
+               <p style="font-size:1.2rem;margin-left:3px;margin-top:-2px;opacity:0.8">Django &amp; Tensorflow<br><br></p>
+               <a target="_blank" rel="noreferrer" class="Home_hoverprojectlink__252nt" style="cursor:pointer" href="https://fervent-feynman-dfd9a2.netlify.app/">
+                  <svg class="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true" style="margin-top:5px;margin-left:5px;position:relative;top:7px;transform:rotate(-45deg);margin-right:5px">
+                     <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"></path>
+                  </svg>
+                  Source Code
+               </a>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;margin-top:50px">
+                <br><br>
+               <div><img alt="ux designer nepal" src="https://mir-s3-cdn-cf.behance.net/user/276/5e4175543273395.5f2100124bf1f.jpg" style="border-radius: 80px;width:80px;height:auto"></div>
+               <p style="font-weight:bold">Dilip Pokhrel</p>
+               <button style="background:orange;box-shadow:none;outline: none;border:none;border-radius: 4px;padding:10px 25px;font-weight: bold;color: white;cursor:pointer">Hire Me</button>
+            </div>
+         </div>
+      </div>
+
+
+
+      <br><br><br><br><br><br><br>
+      <a style="cursor:pointer;margin-left:5%;font-weight: bold;font-size: 1.7rem;" id="ai" class="cases__link active">Related Projects</a>
+<div style="max-width: 100vw;margin:5%">
+      <div id="ai_projects" class="cases__list js-owl" data-items-mobile-portrait="1" data-items-mobile-album="1" data-autoheight><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="" href="/eduwise.html">
+         <div class="cases__preview"><img class="cases__pic lazyload" data-src="./images/eduwise.gif" alt="">
+           <div class="cases__box">View <br>Project</div>
+         </div>
+         <div class="cases__body">
+           <h4 class="cases__info h4">Eduwise</h4>
+           <div class="cases__text">Expense Management System for Schools | AI Powered</div>
+         </div></a><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="200" href="case.html">
+         <div class="cases__preview"><img class="cases__pic lazyload" data-src="./images/foodyea.gif" alt="">
+           <div class="cases__box">View <br>Project</div>
+         </div>
+         <div class="cases__body">
+           <h4 class="cases__info h4">Foodyea</h4>
+           <div class="cases__text">Food Recipe Recommendation System</div>
+         </div></a><a class="cases__item" data-aos="animation-translate-y" data-aos-delay="" href="case.html">
+         <div class="cases__preview"><img class="cases__pic lazyload" data-src="./images/tictac.gif" alt="">
+           <div class="cases__box">View <br>Project</div>
+         </div>
+         <div class="cases__body">
+           <h4 class="cases__info h4">Tic-Tac-Toe Game</h4>
+           <div class="cases__text">Bot play against human. Trained on Tensorflow</div>
+         </div></a>
+      </div>
+      </div>
+         <br><br><br><br>
+
+
+
+
+      <!-- footer -->
+      <div class="wrapper wrapper_dark">
+         <div class="contacts">
+           <div class="contacts__center center">
+             <div class="contacts__container">
+               <div class="contacts__wrap">
+                 <div class="contacts__stage stage" data-aos="animation-scale-y">Say hello &#128075;</div>
+                 <h2 class="contacts__title h1" data-aos="animation-scale-y" data-aos-delay="200">Let&rsquo;s Work <br>Together.</h2>
+                 <div class="contacts__info" data-aos="animation-scale-y" data-aos-delay="400">I&rsquo;d love to meet up with you to discuss your venture, and potential collaborations.</div>
+               </div>
+               <div class="contacts__row">
+                 <div class="contacts__details" data-aos="animation-translate-y"><a class="contacts__line" href="mailto:designsdilip@gmail.com">
+                     <div class="contacts__icon">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="15" fill="none" viewbox="0 0 18 15">
+                         <path fill-rule="evenodd" d="M2.422.267C1.244.267.289 1.222.289 2.4v9.956c0 1.178.955 2.133 2.133 2.133h12.8c1.178 0 2.133-.955 2.133-2.133V2.4c0-1.178-.955-2.133-2.133-2.133h-12.8zM1.711 2.4a.71.71 0 0 1 .711-.711h12.8a.71.71 0 0 1 .711.711v9.956a.71.71 0 0 1-.711.711h-12.8a.71.71 0 0 1-.711-.711V2.4zm2.636.919a.71.71 0 1 0-1.006 1.006l4.978 4.978a.71.71 0 0 0 1.006 0l4.978-4.978a.71.71 0 1 0-1.006-1.006L8.822 7.794 4.347 3.319zm1.422 5.689a.71.71 0 0 1 0 1.006l-1.422 1.422a.71.71 0 1 1-1.006-1.006l1.422-1.422a.71.71 0 0 1 1.006 0zm7.111 0a.71.71 0 1 0-1.006 1.006l1.422 1.422a.71.71 0 1 0 1.006-1.006l-1.422-1.422z" fill="#4c40f7"></path>
+                       </svg>
+                     </div>
+                     <div class="contacts__text">designsdilip@gmail.com</div></a>
+                   <div class="contacts__line">
+                     <div class="contacts__icon">
+                       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewbox="0 0 18 18">
+                         <path fill-rule="evenodd" d="M9.273.85a.71.71 0 0 0-.901 0L.55 7.25a.71.71 0 0 0 .901 1.101l7.372-6.032 5.85 4.786a.71.71 0 1 0 .901-1.101L9.273.85zM3.845 9.222a.71.71 0 1 0-1.422 0v7.111a.71.71 0 0 0 .711.711h6.4a.71.71 0 1 0 0-1.422H3.845v-6.4zm9.932 0a2.04 2.04 0 0 0-2.11 2.008c.001.243.112.6.358 1.053.239.44.567.901.908 1.328l.867.996.867-.996c.341-.427.669-.887.908-1.328.246-.453.357-.81.358-1.053a2.04 2.04 0 0 0-2.11-2.008h-.047zm2.868 2.004h.711c0 .599-.245 1.21-.531 1.736-.294.542-.678 1.075-1.047 1.537l-1.018 1.163-.336.344-.096.095-.027.026-.007.007-.003.003-.491-.514-.491.514-.003-.003-.007-.007-.026-.026-.096-.095-.336-.344-1.017-1.163c-.37-.462-.753-.995-1.047-1.537-.286-.526-.531-1.138-.531-1.736v-.01c.012-.931.399-1.817 1.072-2.46.668-.637 1.561-.981 2.483-.957.922-.024 1.816.32 2.483.957.673.643 1.06 1.529 1.072 2.46l-.711.01zm-3.335 4.911c0 0 0 0 .491-.514l.491.514a.71.71 0 0 1-.982 0zm.491-4.07a.71.71 0 1 0 0-1.422.71.71 0 1 0 0 1.422z" fill="#4c40f7"></path>
+                       </svg>
+                     </div>
+                     <div class="contacts__text"> 
+                       <p>Kathmandu, Nepal</p>
+                     </div>
+                   </div>
+                    
+                 </div>
+                 <form class="contacts__form" data-aos="animation-translate-y" data-aos-delay="200">
+                   <div class="contacts__field field">
+                     <div class="field__wrap">
+                       <input class="field__input" type="text" name="name" placeholder="Name">
+                       <div class="field__icon">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="18" fill="none" viewbox="0 0 17 18">
+                           <path fill-rule="evenodd" d="M8.5.875a4.5 4.5 0 0 0-4.5 4.5v2a4.5 4.5 0 1 0 9 0v-2a4.5 4.5 0 0 0-4.5-4.5zM6 5.375a2.5 2.5 0 1 1 5 0v2a2.5 2.5 0 1 1-5 0v-2zM3.547 12.25a1 1 0 0 0-.969-1.75A5 5 0 0 0 0 14.875v2a1 1 0 0 0 1 1h15a1 1 0 0 0 1-1v-2a5 5 0 0 0-2.578-4.375 1 1 0 1 0-.969 1.75A3 3 0 0 1 15 14.875v1H2v-1a3 3 0 0 1 1.547-2.625z" fill="#111029"></path>
+                         </svg>
+                       </div>
+                     </div>
+                   </div>
+                   <div class="contacts__field field">
+                     <div class="field__wrap">
+                       <input class="field__input" type="email" name="email" placeholder="Email">
+                       <div class="field__icon">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="none" viewbox="0 0 17 17">
+                           <path fill-rule="evenodd" d="M16.707.668a1 1 0 0 1 .238 1.033l-5 14.5a1 1 0 0 1-1.853.093l-3-6.5a1 1 0 0 1 .201-1.126l3-3a1 1 0 0 1 1.414 1.414L9.2 9.589l1.665 3.608 3.52-10.208-10.207 3.52 2.223 1.026a1 1 0 1 1-.838 1.816L1.081 7.283a1 1 0 0 1 .093-1.853l14.5-5a1 1 0 0 1 1.033.238z" fill="#4c40f7"></path>
+                         </svg>
+                       </div>
+                     </div>
+                   </div>
+                   <div class="contacts__field field">
+                     <div class="field__wrap">
+                       <div class="field__icon">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="18" fill="none" viewbox="0 0 12 18">
+                           <path fill-rule="evenodd" d="M6.664 1.128a1 1 0 0 0-1.329 0l-4.5 4a1 1 0 0 0 1.329 1.495L6 3.213l3.836 3.409a1 1 0 1 0 1.329-1.495l-4.5-4zm-4.5 11a1 1 0 1 0-1.329 1.495l4.5 4a1 1 0 0 0 1.329 0l4.5-4a1 1 0 0 0-1.329-1.495L6 15.537l-3.836-3.41z" fill="#111029"></path>
+                         </svg>
+                       </div>
+                     </div>
+                   </div>
+                   <div class="contacts__field field field_textarea">
+                     <div class="field__wrap">
+                       <textarea class="field__textarea" name="message" placeholder="Message"></textarea>
+                       <div class="field__icon">
+                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewbox="0 0 18 18">
+                           <path fill-rule="evenodd" d="M.5 2.875a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3.532l-2.2 2.64a1 1 0 0 1-1.536 0l-2.2-2.64H2.5a2 2 0 0 1-2-2v-10zm15 0h-13v10h4a1 1 0 0 1 .768.36L9 15.313l1.732-2.078a1 1 0 0 1 .768-.36h4v-10zm-12 3a1 1 0 0 1 1-1h9a1 1 0 1 1 0 2h-9a1 1 0 0 1-1-1zm1 3a1 1 0 1 0 0 2h9a1 1 0 1 0 0-2h-9z" fill="#111029"></path>
+                         </svg>
+                       </div>
+                     </div>
+                   </div>
+                   <div class="contacts__btn">
+                     <button class="btn btn_purple"><span class="btn__text">Let&rsquo;s Talk</span>
+                       <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" fill="none" viewbox="0 0 22 16">
+                         <path fill-rule="evenodd" d="M14.707.293a1 1 0 0 0-1.414 0 1 1 0 0 0 0 1.414L18.586 7H1a1 1 0 1 0 0 2h17.586l-5.293 5.293a1 1 0 0 0 1.414 1.414l7-7c.183-.183.28-.419.292-.659L22 8m-.076-.383c-.049-.118-.121-.228-.217-.324l-7-7m7.217 7.324c.048.115.075.241.076.374z" fill="#fff"></path>
+                       </svg>
+                     </button>
+                   </div>
+                 </form>
+               </div>
+               <div class="contacts__category h5">Let&rsquo;s connect</div>
+               <div class="contacts__social">
+                 <div class="contacts__box" data-aos="animation-translate-y"><a class="contacts__link" href="https://instagram.com/dilip_stack" target="_blank">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16">
+                       <path fill="#9f9fa9" d="M12 0c2.056 0 4 1.944 4 4h0v8c0 2.056-1.944 4-4 4h0-8c-2.056 0-4-1.944-4-4h0V4c0-2.056 1.944-4 4-4h0zm0 2H4c-.935 0-2 1.065-2 2h0v8c0 .953 1.047 2 2 2h8c.935 0 2-1.065 2-2h0V4c0-.935-1.065-2-2-2h0zM8 4c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4zm0 2c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2zm4.145-3.068a.96.96 0 1 1 0 1.92.96.96 0 1 1 0-1.92z"></path>
+                     </svg>
+                     <div class="contacts__text">Instagram</div></a></div>
+                 <div class="contacts__box" data-aos="animation-translate-y" data-aos-delay="150"><a class="contacts__link" href="#">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                     <path fill="#9f9fa9" d="M8 0C3.582 0 0 3.582 0 8c0 3.535 2.29 6.532 5.47 7.59.4.073.548-.173.548-.386 0-.19-.007-.693-.01-1.36-2.225.484-2.695-1.073-2.695-1.073-.364-.924-.888-1.17-.888-1.17-.726-.497.055-.487.055-.487.803.056 1.226.825 1.226.825.714 1.223 1.875.87 2.33.665.073-.516.277-.87.503-1.07-1.76-.2-3.608-.876-3.608-3.897 0-.862.307-1.567.81-2.117-.08-.2-.35-.997.075-2.08 0 0 .66-.21 2.16.805.626-.175 1.295-.263 1.96-.266.665.003 1.334.091 1.96.266 1.5-1.015 2.16-.805 2.16-.805.425 1.083.155 1.88.075 2.08.504.55.81 1.255.81 2.117 0 3.029-1.85 3.696-3.615 3.89.285.244.54.723.54 1.46 0 1.055-.01 1.905-.01 2.17 0 .214.144.464.55.385C13.715 14.53 16 11.532 16 8c0-4.418-3.582-8-8-8z"/>
+                   </svg>
+                   
+                     <div class="contacts__text">Github</div></a></div>
+                 <div class="contacts__box" data-aos="animation-translate-y" data-aos-delay="300"><a class="contacts__link" href="https://linkedin.com/in/dilippokhrel">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+                     <path fill="#9f9fa9" d="M3.875 14.141H1.703V5.328H3.875v8.813zM2.789 4.711C2.789 3.822 2.01 3.047 1.121 3.047C0.232 3.047 0 3.822 0 4.711C0 5.6 0.779 6.375 1.668 6.375C2.557 6.375 2.789 5.6 2.789 4.711zM15.984 14.141H13.813v-4.657c0-1.164-0.625-1.806-1.387-1.806C11.32 7.678 11 8.32 11 9.277v4.593H8.828V5.328h2.117v1.101h0.031c0.297-0.566 1.031-1.152 2.109-1.152c2.336 0 2.77 1.539 2.77 3.547v5.517z"/>
+                     <rect width="3.607" height="10.714" x="0" y="0" fill="none"/>
+                   </svg>
+                   
+                   
+                   
+                     <div class="contacts__text">Linkedin</div></a></div>
+                 <div class="contacts__box" data-aos="animation-translate-y" data-aos-delay="450"><a class="contacts__link" href="#">
+                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewbox="0 0 16 16">
+                       <path fill="#9f9fa9" d="M12 0c2.056 0 4 1.944 4 4h0v8c0 2.056-1.944 4-4 4h0-8c-2.056 0-4-1.944-4-4h0V4c0-2.056 1.944-4 4-4h0zm0 2H4c-.935 0-2 1.065-2 2h0v8c0 .953 1.047 2 2 2h8c.935 0 2-1.065 2-2h0V4c0-.935-1.065-2-2-2h0zM8 4c2.206 0 4 1.794 4 4s-1.794 4-4 4-4-1.794-4-4 1.794-4 4-4zm0 2c-1.103 0-2 .897-2 2s.897 2 2 2 2-.897 2-2-.897-2-2-2zm4.145-3.068a.96.96 0 1 1 0 1.92.96.96 0 1 1 0-1.92z"></path>
+                     </svg>
+                     <div class="contacts__text">Behance</div></a></div>
+               </div>
+               <div class="figures">
+                 <div class="figures__preview"><img class="figures__pic" src="images/content-figures-1.png" alt=""></div>
+                 <div class="figures__preview"><img class="figures__pic js-parallax" data-scale="1.6" data-orientation="up" src="images/content-figures-2.png" alt=""></div>
+                 <div class="figures__preview"><img class="figures__pic js-parallax" data-scale="1.3" data-orientation="up" src="images/content-figures-3.png" alt=""></div>
+                 <div class="figures__preview"><img class="figures__pic" src="images/content-figures-4.png" alt=""></div>
+                 <div class="figures__preview"><img class="figures__pic js-parallax" data-scale="2.3" data-orientation="down" src="images/content-figures-5.png" alt=""></div>
+                 <div class="figures__preview"><img class="figures__pic js-parallax" data-scale="2" data-orientation="up" src="images/content-figures-6.png" alt=""></div>
+               </div>
+             </div>
+           </div>
+         </div>
+         <div class="footer">
+           <div class="footer__center center">
+             <div class="footer__body"><a class="footer__logo" href="index.html"><img class="footer__pic" src="images/img-logo-empty.svg" alt=""></a>
+               <div class="footer__wrap">
+                 <div class="footer__title h1">I only have one chance to make a first impression.</div>
+                 <div class="footer__info h4">Contact me. I will make it an amazing one.</div>
+               </div>
+               <div class="footer__menu"><a class="footer__link" href="#">About Me</a><a class="footer__link" href="#">Projects</a><a class="footer__link" href="#">Contact</a><a class="footer__link" href="#">Dribbble</a><a class="footer__link" href="#">Instagram</a></div>
+             </div>
+             <div class="footer__bottom">
+               <div class="footer__copyright">&copy; 2023, Dilip Pokhrel.</div><a class="footer__scroll js-scroll" href="#header">Back to top</a>
+             </div>
+           </div>
+           <div class="footer__bg">
+             <div class="footer__preview"><img class="footer__pic js-parallax" data-scale="1.5" data-orientation="down" src="images/content-footer-cube-1.png" alt=""></div>
+             <div class="footer__preview"><img class="footer__pic js-parallax" data-scale="1.8" data-orientation="up" src="images/content-footer-cube-1.png" alt=""></div>
+           </div>
+         </div>
+       </div>
+      <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+      <script src="js/lib-jquery.min.js"></script>
+      <script src="js/lib-owl.carousel.min.js"></script>
+      <script src="js/lib-aos.js"></script>
+      <script src="js/lib-simpleParallax.min.js"></script>
+      <script src="js/2702-js-app.js"></script>
+
+   </body>
+</html>
