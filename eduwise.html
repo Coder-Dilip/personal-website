@@ -1,6 +1,6 @@
 <html>
    <head>
-      <meta name="viewport" content="width=device-width">
+      <!-- <meta name="viewport" content="width=device-width"> -->
       <meta charset="utf-8">
       <meta name="next-head-count" content="4">
       <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,15 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 <link rel="stylesheet" media="all" href="css/css-app.min.css">
 <script>
-  var viewportmeta = document.querySelector('meta[name="viewport"]');
-  if (viewportmeta) {
-    if (screen.width < 375) {
-      var newScale = screen.width / 375;
-      viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
-    } else {
-      viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
-    }
-  }
+ 
 </script>
     <script src="./js/lazysizes.min.js" async=""></script>
 <style>
@@ -170,6 +162,12 @@ video {
     padding: 0; /* Remove any padding */
     margin: 0; /* Remove any margin */
   }
+
+  .page-wrap { width: 80%; }
+
+@media (max-width: 600px) {
+  .resp .page-wrap { width: 100%; }
+}
 </style>
    </head>
    <body data-new-gr-c-s-check-loaded="14.1114.0" data-gr-ext-installed="">

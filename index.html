@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>Dilip Pokhrel</title>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1" /> -->
     <meta name="format-detection" content="telephone=no">
     <link rel="apple-touch-icon" sizes="180x180" href="https://yt3.googleusercontent.com/ytc/AGIKgqPTjOGHkzx6yGVcuReM-qE14VBPfmfHMRu24Bqj=s900-c-k-c0x00ffffff-no-rj">
     <link rel="icon" type="image/png" sizes="32x32" href="https://yt3.googleusercontent.com/ytc/AGIKgqPTjOGHkzx6yGVcuReM-qE14VBPfmfHMRu24Bqj=s900-c-k-c0x00ffffff-no-rj">
@@ -25,15 +26,15 @@
     <meta property="og:site_name" content="Dilip Pokhrel">
     <link rel="stylesheet" media="all" href="css/css-app.min.css">
     <script>
-      var viewportmeta = document.querySelector('meta[name="viewport"]');
-      if (viewportmeta) {
-        if (screen.width < 375) {
-          var newScale = screen.width / 375;
-          viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
-        } else {
-          viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
-        }
-      }
+      // var viewportmeta = document.querySelector('meta[name="viewport"]');
+      // if (viewportmeta) {
+      //   if (screen.width < 375) {
+      //     var newScale = screen.width / 375;
+      //     viewportmeta.content = 'width=375, minimum-scale=' + newScale + ', maximum-scale=1.0, user-scalable=no, initial-scale=' + newScale + '';
+      //   } else {
+      //     viewportmeta.content = 'width=device-width, maximum-scale=1.0, initial-scale=1.0';
+      //   }
+      // }
     </script>
         <script src="./js/lazysizes.min.js" async=""></script>
     <style>
@@ -85,6 +86,11 @@
   }
 }
 
+.page-wrap { width: 80%; }
+
+@media (max-width: 600px) {
+  .resp .page-wrap { width: 100%; }
+}
 
     </style>
   </head>
