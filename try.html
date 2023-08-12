@@ -47,6 +47,7 @@
             canvas.height = video.videoHeight;
             canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
             photo.src = canvas.toDataURL('image/png');
+            video.pause();  // Pause the video stream after capturing a photo
         });
     </script>
 </body>
