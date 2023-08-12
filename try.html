@@ -6,71 +6,48 @@
 <body>
     <video id="video" autoplay></video>
     <button id="capture">Capture Photo</button>
+    <button id="switchCamera">Switch Camera</button>
     <canvas id="canvas"></canvas>
     <img id="photo" alt="Captured Photo">
     <script>
+        let currentCamera = 'environment'; // 'environment' is rear camera, 'user' is front camera
+
         const video = document.getElementById('video');
         const canvas = document.getElementById('canvas');
         const photo = document.getElementById('photo');
         const captureButton = document.getElementById('capture');
-        
+        const switchCameraButton = document.getElementById('switchCamera');
+
+        // Function to get user media based on the currentCamera value
+        function getUserMedia() {
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: currentCamera } })
+                .then((stream) => {
+                    video.srcObject = stream;
+                })
+                .catch((error) => {
+                    console.error('Error accessing camera:', error);
+                });
+        }
+
+        // Switch camera button click handler
+        switchCameraButton.addEventListener('click', () => {
+            currentCamera = currentCamera === 'environment' ? 'user' : 'environment';
+            if (video.srcObject) {
+                video.srcObject.getTracks().forEach(track => track.stop());
+            }
+            getUserMedia();
+        });
+
         // Get user media (camera)
-        navigator.mediaDevices.getUserMedia({ video: true })
-            .then((stream) => {
-                video.srcObject = stream;
-            })
-            .catch((error) => {
-                console.error('Error accessing camera:', error);
-            });
-        
+        getUserMedia();
+
         // Capture photo from video stream
         captureButton.addEventListener('click', () => {
             canvas.width = video.videoWidth;
             canvas.height = video.videoHeight;
             canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
             photo.src = canvas.toDataURL('image/png');
-            return;
-            // Send the captured photo to Django view using an AJAX request
-            const formData = new FormData();
-            formData.append('photo', dataURLtoBlob(photo.src));
-            
-            fetch('/upload-photo/', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-CSRFToken': '{{ csrf_token }}',
-                },
-            })
-            .then((response) => response.text())
-            .then((result) => {
-                console.log(result);
-            })
-            .catch((error) => {
-                console.error('Error uploading photo:', error);
-            });
         });
-        
-        // Convert data URL to Blob
-        function dataURLtoBlob(dataURL) {
-            const parts = dataURL.split(';base64,');
-            const contentType = parts[0].split(':')[1];
-            const byteCharacters = atob(parts[1]);
-            const byteArrays = [];
-            
-            for (let offset = 0; offset < byteCharacters.length; offset += 512) {
-                const slice = byteCharacters.slice(offset, offset + 512);
-                const byteNumbers = new Array(slice.length);
-                
-                for (let i = 0; i < slice.length; i++) {
-                    byteNumbers[i] = slice.charCodeAt(i);
-                }
-                
-                const byteArray = new Uint8Array(byteNumbers);
-                byteArrays.push(byteArray);
-            }
-            
-            return new Blob(byteArrays, { type: contentType });
-        }
     </script>
 </body>
 </html>
