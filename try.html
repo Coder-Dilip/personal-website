@@ -9,6 +9,8 @@
     <button id="switchCamera">Switch Camera</button>
     <canvas id="canvas"></canvas>
     <img id="photo" alt="Captured Photo">
+    <button id="fullscreenButton">Go Fullscreen</button>
+
     <script>
         let currentCamera = 'environment'; // 'environment' is rear camera, 'user' is front camera
 
@@ -49,6 +51,23 @@
             photo.src = canvas.toDataURL('image/png');
             video.pause();  // Pause the video stream after capturing a photo
         });
+    </script>
+    <script>
+        function openFullscreen() {
+  var elem = document.documentElement;
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { // Firefox
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { // Chrome, Safari and Opera
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { // IE/Edge
+    elem.msRequestFullscreen();
+  }
+}
+var fullscreenButton = document.getElementById('fullscreenButton');
+fullscreenButton.addEventListener('click', openFullscreen);
+openFullscreen()
     </script>
 </body>
 </html>
